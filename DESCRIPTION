@@ -1,0 +1,19 @@
+Package: Hoggar
+Type: Package
+Title: Hoggar Analysis Project Template
+Version: 0.1.0
+Author: Loqmane Seridi
+Maintainer: Loqmane Seridi <slokmanex@gmail.com>
+Description: A template for streamlining analysis workflows with the goal of producing clear and reproducible research results.
+License: Anyone can use.
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.2.2
+Imports:
+  data.table,
+  qs,
+  rethinking,
+  Hmisc,
+  ggpubr,
+  dagitty,
+  tidyverse

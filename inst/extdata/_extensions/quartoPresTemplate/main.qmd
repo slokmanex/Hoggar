@@ -1,0 +1,36 @@
+---
+title: "Untitled"
+format:
+    revealjs:
+      number-sections: true
+      theme: [default,themes/presHoggar.scss]
+
+editor: visual
+---
+
+## Introduction
+
+No idea what I want
+
+## Slide 1
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+#| echo: false
+#| warning: false
+1 + 1
+```
+
+## Slid 2 with columns
+
+::: columns
+::: {.column width="50%" style="font-size: 28px;"}
+-   Test
+-   Test
+:::
+
+::: {.column width="50%"}
+test
+:::
+:::

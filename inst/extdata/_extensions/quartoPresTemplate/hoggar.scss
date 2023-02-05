@@ -1,0 +1,26 @@
+/*-- scss:defaults --*/
+
+// fonts
+$font-family-sans-serif: "Avenir"!default;
+
+// colors
+$body-bg: #fff !default;
+$body-color: #000 !default;
+$link-color: #51483d !default;
+$selection-bg: #26351c !default;
+
+
+// headings
+$presentation-heading-font: "Avenir"!default;
+$presentation-heading-color: '#0A4D8C' !default;
+$presentation-h1-font-size: 2em;
+$presentation-h2-font-size: 1.3em;
+$presentation-h3-font-size: 1em;
+$presentation-h4-font-size: 0.7em;
+
+
+/*-- scss:rules --*/
+.reveal a {
+  line-height: 1.3em;
+}
+
