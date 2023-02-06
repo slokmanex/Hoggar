@@ -1,8 +1,11 @@
 ---
-title: "Untitled"
+title: "Main Presentation"
+author: "Loqmane Seridi"
+date: today
+date-format: short
 format:
     revealjs:
-      number-sections: true
+      number-sections: false
       theme: [default,themes/presHoggar.scss]
 
 editor: visual
@@ -10,27 +13,99 @@ editor: visual
 
 ## Introduction
 
-No idea what I want
+Here's a funny fact about soccer: In the 1934 World Cup, Italy used a goalkeeper who was blind in one eye, and they still managed to win the tournament! His name was Dino Zoff, and he went on to become one of Italy's greatest goalkeepers of all time.
 
 ## Slide 1
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+Here's another fun fact about soccer:\
+
+In a match between AS Adema and Stade Olympique de L'Emyrne in Madagascar, the players of AS Adema scored 149 own goals in protest against a referee decision. The final score was **149-0**, setting a world record for the highest score in a professional soccer match.
 
 ```{r}
 #| echo: false
+#| code-fold: true
+#| code-line-numbers: true
+#| tidy: true
 #| warning: false
-1 + 1
+#| message: false
+
+# This code will load default packages and functions
+source('scripts/load_packages.R')
+source('scripts/help_functions.R')
+# Load ggplot theme
+source('themes/theme_hoggar.R')
+# Laod the data that could be used in the resentation 
+pres_data <- qs::qread('data/presentation/pres_data.qs')
 ```
 
-## Slid 2 with columns
+## Slide 2 with 2 columns
 
-::: columns
-::: {.column width="50%" style="font-size: 28px;"}
--   Test
--   Test
+In biology, network analysis reveals intricate relationships between genes, proteins, and biological pathways, unlocking secrets of complex biological systems and advancing our understanding of life itself !\
+\
+
+```{r}
+#| label: fig-charts
+#| layout-ncol: 2
+#| fig-cap: "Examining Weight"
+#| fig-subcap:
+#|   - Density
+#|   - Scatter
+#| fig-cap-location: top
+#| fig-dpi: 500
+
+ggdensity(
+  data = pres_data$sim_data,
+  x = "weight",
+  color = "sex",
+  fill = "sex",
+  size = 1,
+  ggtheme = theme_hoggar(xytic_size = 30, font_size = 34),
+  palette = hoggar_palette
+)
+ggscatter(
+  data = pres_data$sim_data,
+  x = "age",
+  y = "weight",
+  color = "sex",
+  fill = "sex",
+  size = 4,
+  ggtheme = theme_hoggar(xytic_size = 30, font_size = 34),
+  palette = hoggar_palette
+)
+
+```
+
+## Flex two column
+
+::: {style="font-size: 24px;"}
+Why did the biologist and computer scientist team up to study complex systems? To see if they could unravel the mysteries of life with a single keystroke!
 :::
 
-::: {.column width="50%"}
-test
+:::: {layout-ncol="2"}
+:::{ style="font-size: 22px;"}
+-   Causal inference studies cause-effect relationships.
+-   It uses experiments, observations, and models.
+-   Helps make informed decisions.
 :::
+:::
+::::
+```{r}
+#| label: fig-wieght
+#| layout-ncol: 2
+#| fig-cap: "Examining Weight and SEX"
+#| fig-subcap:
+#|   - Density plot
+#| fig-cap-location: top
+#| fig-dpi: 500
+ggdensity(
+  pres_data$sim_data,
+  x = "weight",
+  color = "sex",
+  fill = 'sex',
+  size = 0.5,
+  ggtheme = theme_hoggar( xytic_size = 30,
+                           font_size = 34),
+  palette = hoggar_palette
+)
+```
 :::

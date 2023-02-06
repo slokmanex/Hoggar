@@ -30,6 +30,8 @@ source('scripts/load_packages.R')
 source('scripts/help_functions.R')
 # Load ggplot theme
 source('themes/theme_hoggar.R')
+# Define a list variable to keep data from presentation
+pres_data <- list()
 ```
 
 ## Loading the data
@@ -60,7 +62,7 @@ In this section, you can provide a summary of the data for a quick overview.
 #| tidy: true
 #| warning: false
 #| message: false
-html(describe(sim_data, 'Data Summary'))
+html(describe(sim_data, 'Data Summary'),scroll=TRUE)
 ```
 
 Verify that plotting works.
@@ -72,6 +74,19 @@ Verify that plotting works.
 #| warning: false
 #| message: false
 
+# Update data, add weight column  
+sim_data <- upData(sim_data, 
+                   weight = rnorm(nrow(sim_data),
+                                  80, 10),
+                   labels = .q(weight = "weight"),
+                   units = .q(weight = "kg"))
+pres_data$sim_data <- sim_data
+
+# Save the data for presentatio
+qs::qsave(pres_data,
+      file = 'data/presentation/pres_data.qs')
+
+# Plot some data for illustration 
 ggdensity(
   sim_data,
   x = "age",
@@ -80,4 +95,8 @@ ggdensity(
   ggtheme = theme_hoggar(),
   palette = hoggar_palette
 )
+
 ```
+
+## Appendix
+{{< include qmd/_appendix.qmd >}}

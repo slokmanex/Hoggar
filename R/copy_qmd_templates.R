@@ -9,6 +9,12 @@ copy_qmd_templates<- function(){
     to = paste0("."),
     copy.mode = TRUE
   )
+  file.copy(
+    from = system.file("extdata/_extensions/quartoDocTempate/_appendix.qmd",
+                       package = "Hoggar"),
+    to = paste0("./qmd/"),
+    copy.mode = TRUE
+  )
 
   file.copy(
     from = system.file("extdata/_extensions/quartoPresTemplate/main.qmd",
@@ -32,4 +38,5 @@ copy_qmd_templates<- function(){
     to = paste0("themes/presHoggar.scss"),
     copy.mode = TRUE
   )
+
 }

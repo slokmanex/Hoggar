@@ -29,7 +29,7 @@ create_data <- function(){
     arm = fcase(arm %like% "T1", "GUS",
                 arm %like% "T2", "PBO"),
     analysis_visit = factor(gsub(" ", "", toupper(analysis_visit)),
-                            levels = c("WEEK1", "WEEK2")),
+                            levels = c("WEEK0", "WEEK1")),
     subject_id = as.character(subject_id),
     subset = sex != "",
     keep = to_keep,

@@ -1,0 +1,22 @@
+This section is appended from './qmd/\_appendix.qmd'
+
+```{r}
+#| echo: false
+#| code-fold: true
+#| code-line-numbers: true
+#| tidy: true
+#| warning: false
+#| message: false
+#| fig-cap: This is a boxplot showing the difference in age between males and females, based on a random simulation.
+
+ggboxplot(
+  sim_data,
+  x = "sex",
+  y = 'age',
+  color = "sex",
+  fill = 'sex',
+  alpha = 0.5,
+  ggtheme = theme_hoggar(),
+  palette = hoggar_palette
+)
+```
