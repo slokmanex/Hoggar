@@ -17,3 +17,5 @@ Imports:
   ggpubr,
   dagitty,
   tidyverse
+URL: https://github.com/slokmanex/Hoggar
+BugReports: https://github.com/slokmanex/Hoggar/issues
